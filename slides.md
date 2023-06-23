@@ -115,17 +115,24 @@ layout: default
 まあ最近はGithub Actionsが多いですよね？
 
 ---
+layout: center
+---
+
+# 良かったカスタムアクション集
+
+---
 
 # Octocov
 
 https://github.com/marketplace/actions/run-octocov
 
 PHPでも使える！  
-一つのアクションを実行するだけで差分が出るのが良い！
+一つのアクションを実行するだけで差分が出るのが良い！  
+→ カバレッジを下げないことを意識づけできるようになりました
 
 <img src="https://raw.githubusercontent.com/k1LoW/octocov-action/main/docs/comment_with_diff.png" class="h-50 rounded shadow" alt="Comment with diff" />
 
-以前 "[GitHub Actionsでカバレッジを可視化する](https://zenn.dev/katzumi/articles/995df5abebc91e312167)" という記事で自前でカバレッジ率をコメントするようにしていましたが、差分までは出せなかったのがサクッと表示できるようになりました。
+以前自前で "[GitHub Actionsでカバレッジを可視化する](https://zenn.dev/katzumi/articles/995df5abebc91e312167)" ことを行なっていましたが、差分までは出せなかったのがサクッと表示できるようになりました。
 
 ---
 layout: two-cols-header
@@ -147,7 +154,84 @@ https://github.com/marketplace/actions/automate-pull-request-generation-and-tagg
 
 <img src="http://songmu.github.io/images/ghzo/22-0830-0036-a8c809bd2e307295.png" class="h-50 rounded shadow" alt="pull request" />
 
-<!-- 実はこのスライドの作成環境もGithub Actionsで管理されており、スライド自体がバージョンをナンバリングして管理できるようなっています >
+<!-- 実はこのスライドの作成環境もGithub Actionsで管理されており、スライド自体がバージョンをナンバリングして管理できるようなっています -->
+
+---
+
+# runn
+
+https://github.com/marketplace/actions/run-runn
+
+APIシナリオテストツールのCI組み込みがより簡単に！（宣伝）  
+そもそもAPIシナリオテストってどうよ？という方は是非明日見に来てください！  
+"[APIシナリオテストの新ツールrunn](https://zenn.dev/katzumi/articles/api-scenario-testing-with-runn)" という紹介記事を書いているのでどぞー
+
+<Tweet id="1561490586858770432" scale="0.7" />
+
+---
+layout: center
+---
+
+# Tips
+
+---
+
+# 連続pushした時に止めるアレ = concurrency
+
+名前が分かりづらいので見落としている人が多いかも。。  
+定期的に記事 [^1] にいいねが付きます。
+
+```yaml {all|11-}
+name: test
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'foo/**'
+  push:
+    branches:
+      - develop
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+```
+
+[^1]: [zenn.dev](https://zenn.dev/katzumi/articles/using-concurrency-at-github-actions)
+
+---
+
+# GitHub APIをプログラマブルに呼び出す
+
+https://github.com/marketplace/actions/github-script
+
+javascriptで書ける！シェルで文字列加工や条件分岐は怠いですよねw
+
+```yaml
+  - name: Upload Release Asset
+    uses: actions/github-script@v6
+    with:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+      script: |
+        const fs = require('fs');
+        const path = require('path');
+        const release = await github.rest.repos.getReleaseByTag({
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          tag: context.payload.inputs.tag
+        });
+        const filePath = path.join(path.resolve(process.env.GITHUB_WORKSPACE), 'slides-export.pdf');
+        const fileContent = fs.readFileSync(filePath);
+        await github.rest.repos.uploadReleaseAsset({
+          url: release.data.upload_url,
+          headers: {
+            'content-type': 'application/octet-stream',
+            'content-length': fileContent.length,
+          },
+          name: 'slides-export.pdf',
+          data: fileContent,
+        });
+```
 
 ---
 layout: end
