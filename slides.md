@@ -34,7 +34,7 @@ fonts:
 
 # FY2023で導入してよかったGitHub Actionsのカスタムアクション＆Tips集
 
-[(非公式)PHPカンファレンス福岡・前日Meetup](https://prtimes.connpass.com/event/280691/)  
+[(非公式)PHPカンファレンス福岡 前夜祭](https://connpass.com/event/282285/)  
 June 23, 2023.  
 v0.0.3
 
@@ -127,7 +127,7 @@ layout: center
 
 https://github.com/marketplace/actions/run-octocov
 
-PHPでも使える！  
+コードメトリクスツールです。PHPでも使える！  
 一つのアクションを実行するだけで差分が出るのが良い！  
 → カバレッジを下げないことを意識づけできるようになりました
 
