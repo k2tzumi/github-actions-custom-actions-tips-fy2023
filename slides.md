@@ -36,7 +36,7 @@ fonts:
 
 [(非公式)PHPカンファレンス福岡・前日Meetup](https://prtimes.connpass.com/event/280691/)  
 June 23, 2023.  
-v0.0.2
+v0.0.3
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
