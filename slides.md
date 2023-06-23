@@ -34,7 +34,8 @@ fonts:
 
 # FY2023で導入してよかったGitHub Actionsのカスタムアクション＆Tips集
 
-<!-- [PHPカンファレンス福岡・前日Meetup](https://prtimes.connpass.com/event/280691/) -->　June 23, 2023.  
+[PHPカンファレンス福岡・前日Meetup](https://prtimes.connpass.com/event/280691/)  
+June 23, 2023.  
 v0.0.2
 
 <div class="pt-12">
