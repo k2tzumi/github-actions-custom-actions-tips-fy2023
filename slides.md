@@ -34,8 +34,8 @@ fonts:
 
 # FY2023で導入してよかったGitHub Actionsのカスタムアクション＆Tips集
 
-[(非公式)PHPカンファレンス福岡・前日Meetup](https://prtimes.connpass.com/event/280691/)  
-June 23, 2023.  
+[PHPカンファレンス福岡2023 フリースタイルトーク](https://phpcon.fukuoka.jp/2023/)  
+June 24, 2023.  
 v0.0.3
 
 <div class="pt-12">
@@ -69,8 +69,7 @@ katzumiと申します
 
 以下のアカウントで活動しています  
 <fxemoji-partypopper /> [祝初採択！](https://fortee.jp/phpconfukuoka-2023/proposal/9af6e2bc-b64a-4287-baef-ee17ddd21560)  
-VAddyホール <lucide-clock-2 /> 14:10〜 にお会いしましょう!   
-  
+このあとスグ！VAddyホール <lucide-clock-2 /> で僕と握手！  
 今日は[コレ](https://fortee.jp/phpconfukuoka-2023/proposal/dee83699-f82c-4de9-96cb-eb189373507d)の供養です <twemoji-headstone />
 
 
@@ -127,7 +126,7 @@ layout: center
 
 https://github.com/marketplace/actions/run-octocov
 
-PHPでも使える！  
+コードメトリクスツールです。PHPでも使える！  
 一つのアクションを実行するだけで差分が出るのが良い！  
 → カバレッジを下げないことを意識づけできるようになりました
 
@@ -164,7 +163,7 @@ https://github.com/marketplace/actions/automate-pull-request-generation-and-tagg
 https://github.com/marketplace/actions/run-runn
 
 APIシナリオテストツールのCI組み込みがより簡単に！（宣伝）  
-そもそもAPIシナリオテストってどうよ？という方は是非明日見に来てください！  
+そもそもAPIシナリオテストってどうよ？という方は是非この後VAddyに来てください！（２回目）  
 "[APIシナリオテストの新ツールrunn](https://zenn.dev/katzumi/articles/api-scenario-testing-with-runn)" という紹介記事を書いているのでどぞー
 
 <Tweet id="1561490586858770432" scale="0.7" />
