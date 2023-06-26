@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.0.5](https://github.com/k2tzumi/github-actions-custom-actions-tips-fy2023/compare/v0.0.4...v0.0.5) - 2023-06-26
+- Append ogp by @k2tzumi in https://github.com/k2tzumi/github-actions-custom-actions-tips-fy2023/pull/10
+
 ## [v0.0.4](https://github.com/k2tzumi/github-actions-custom-actions-tips-fy2023/compare/v0.0.3...v0.0.4) - 2023-06-24
 - Change target by @k2tzumi in https://github.com/k2tzumi/github-actions-custom-actions-tips-fy2023/pull/8
 
